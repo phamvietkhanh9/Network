@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         APIManager service = retrofit.create(APIManager.class);
-        service.getItemData().equals(new Callback<Item>(){
+        service.getItemData().enqueue(new Callback<Item>(){
            @Override
            public void onResponse(Call<Item> call, Response<Item> response){
                if (response.body()==null){
